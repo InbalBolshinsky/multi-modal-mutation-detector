@@ -1,9 +1,6 @@
 <<<<<<< HEAD
 # Multi-Modal Genetic Mutation Detector" 
-=======
-# -multi-modal-mutation-detector
 >>>>>>> 1520d808e9cd0beb0880e13478e6c99ad7cdca03
-# Multi-Modal Genetic Mutation Detector
 
 ## Project Overview
 This project analyzes genetic mutations associated with lung cancer by focusing on three key genes: **EGFR**, **KRAS**, and **ALK**. The study explores the clinical significance of these mutations, categorized into:
