@@ -44,56 +44,70 @@ The goal is to prioritize mutations and lay the groundwork for integrating genet
 ---
 
 # Repository Structure
+
 multi-modal-genetic-mutation-detector/
 ├── data/
 
 │   ├── clinvar.vcf                     
 
-**Raw genetic data file from ClinVar**
+**Raw genetic data file from ClinVar**:
+
 │   ├── EGFR_Pathogenic.csv             
 
-**Filtered data for EGFR Pathogenic variants**
+**Filtered data for EGFR Pathogenic variants**:
+
 │   ├── KRAS_Benign.csv                 
 
-**Filtered data for KRAS Benign variants**
+**Filtered data for KRAS Benign variants**:
+
 │   ├── ALK_VUS.csv                     
 
-**Filtered data for ALK VUS variants**
+**Filtered data for ALK VUS variants**:
+
 │   └── ...                             
 
-**Additional filtered data files**
+**Additional filtered data files**:
+
 ├── results/
 │   ├── gene_variant_summary.csv        
 
-**Summary of variant counts per gene and classification**
+**Summary of variant counts per gene and classification**:
+
 │   ├── visualizations/
 
 │   │   ├── 
 gene_variant_distribution.png 
 
-**Bar plot of variant distribution**
+**Bar plot of variant distribution**:
+
 │   │   └── ...                         
 
-**Other generated plots or figures**
+**Other generated plots or figures**:
+
 ├── scripts/
 
 │   ├── filter_variants.py              
 
-**Script to parse and filter VCF data**
+**Script to parse and filter VCF data**:
+
 │   ├── generate_plots.py               
 
-**Script to generate visualizations**
+**Script to generate visualizations**:
+
 │   └── ...                             
 
-**Other Python scripts**
+**Other Python scripts**:
+
 ├── README.md                           
 
-**Project documentation**
+**Project documentation**:
+
 ├── requirements.txt                    
 
-**Python dependencies list**
+**Python dependencies list**:
+
 ├── .gitignore                          
 
-**Files and folders to exclude from version control**
+**Files and folders to exclude from version control**:
 
 
