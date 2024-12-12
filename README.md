@@ -46,22 +46,51 @@ The goal is to prioritize mutations and lay the groundwork for integrating genet
 ## Repository Structure
 multi-modal-genetic-mutation-detector/
 ├── data/
-│   ├── clinvar.vcf                     # Raw genetic data file from ClinVar
-│   ├── EGFR_Pathogenic.csv             # Filtered data for EGFR Pathogenic variants
-│   ├── KRAS_Benign.csv                 # Filtered data for KRAS Benign variants
-│   ├── ALK_VUS.csv                     # Filtered data for ALK VUS variants
-│   └── ...                             # Additional filtered data files
+│   ├── clinvar.vcf                     
+
+# Raw genetic data file from ClinVar
+│   ├── EGFR_Pathogenic.csv             
+
+# Filtered data for EGFR Pathogenic variants
+│   ├── KRAS_Benign.csv                 
+
+# Filtered data for KRAS Benign variants
+│   ├── ALK_VUS.csv                     
+
+# Filtered data for ALK VUS variants
+│   └── ...                             
+
+# Additional filtered data files
 ├── results/
-│   ├── gene_variant_summary.csv        # Summary of variant counts per gene and classification
+│   ├── gene_variant_summary.csv        
+
+# Summary of variant counts per gene and classification
 │   ├── visualizations/
-│   │   ├── gene_variant_distribution.png # Bar plot of variant distribution
-│   │   └── ...                         # Other generated plots or figures
+│   │   ├── 
+gene_variant_distribution.png 
+
+# Bar plot of variant distribution
+│   │   └── ...                         
+
+# Other generated plots or figures
 ├── scripts/
-│   ├── filter_variants.py              # Script to parse and filter VCF data
-│   ├── generate_plots.py               # Script to generate visualizations
-│   └── ...                             # Other Python scripts
-├── README.md                           # Project documentation
-├── requirements.txt                    # Python dependencies list
-├── .gitignore                          # Files and folders to exclude from version control
+│   ├── filter_variants.py              
+
+# Script to parse and filter VCF data
+│   ├── generate_plots.py               
+
+# Script to generate visualizations
+│   └── ...                             
+
+# Other Python scripts
+├── README.md                           
+
+# Project documentation
+├── requirements.txt                    
+
+# Python dependencies list
+├── .gitignore                          
+
+# Files and folders to exclude from version control
 
 
