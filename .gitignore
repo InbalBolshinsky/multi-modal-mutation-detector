@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # Ignore data and models (optional)
-data/*
-models/*
+#data/*
+#models/*
 
 # Ignore Python cache
 __pycache__/
