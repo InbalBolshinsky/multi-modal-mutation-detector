@@ -14,6 +14,17 @@ The goal is to prioritize mutations and lay the groundwork for integrating genet
 ## Data Processing
 ### Source
 - **ClinVar VCF Dataset**: Downloaded from [ClinVar VCF GRCh38](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/).
+- ## Download the ClinVar Data File
+
+The `clinvar.vcf.gz` file is too large to store directly in this repository. You can download it from Google Drive using the following link:
+
+[Download ClinVar Data](https://drive.google.com/uc?id=1ZMblL5-bpCWiSCDiQZ80B8K4S6i-fwzg&export=download)
+
+Alternatively, use the following command to download it directly in your terminal or script:
+
+```bash
+wget https://drive.google.com/uc?id=1ZMblL5-bpCWiSCDiQZ80B8K4S6i-fwzg&export=download
+
 
 ### Steps
 1. **Downloaded and filtered variants**:
