@@ -1,4 +1,4 @@
-# Multi-Modal Genetic Mutation Detector" 
+# Multi-Modal Genetic Mutation Detector
 
 ## Project Overview
 This project analyzes genetic mutations associated with lung cancer by focusing on three key genes: **EGFR**, **KRAS**, and **ALK**. The study explores the clinical significance of these mutations, categorized into:
@@ -13,17 +13,11 @@ The goal is to prioritize mutations and lay the groundwork for integrating genet
 ## Data Processing
 ### Source
 - **ClinVar VCF Dataset**: Downloaded from [ClinVar VCF GRCh38](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/).
-- ## Download the ClinVar Data File
+- **TCIA Metadata and Diagnosis Files**: Downloaded from:
+  - [LIDC-IDRI Metadata](https://www.cancerimagingarchive.net/wp-content/uploads/LIDC-IDRI_MetaData.csv)
+  - [TCIA Diagnosis Data](https://www.cancerimagingarchive.net/wp-content/uploads/tcia-diagnosis-data-2012-04-20.xls)
 
-The `clinvar.vcf.gz` file is too large to store directly in this repository. You can download it from Google Drive using the following link:
-
-[Download ClinVar Data](https://drive.google.com/uc?id=1ZMblL5-bpCWiSCDiQZ80B8K4S6i-fwzg&export=download)
-
-Alternatively, use the following command to download it directly in your terminal or script:
-
-```bash
-wget https://drive.google.com/uc?id=1ZMblL5-bpCWiSCDiQZ80B8K4S6i-fwzg&export=download
-
+---
 
 ### Steps
 1. **Downloaded and filtered variants**:
@@ -33,6 +27,27 @@ wget https://drive.google.com/uc?id=1ZMblL5-bpCWiSCDiQZ80B8K4S6i-fwzg&export=dow
    - `GENEINFO`: Gene names.
    - `CLNSIG`: Clinical significance.
    - `CLNDN`: Disease names.
+3. **Automated File Downloads**:
+   - Created a reusable function to download and process CSV, Excel, JSON, and legacy Excel (`.xls`) files programmatically.
+   - Example usage:
+     ```python
+     from utils import download_and_load_file
+
+     # Download and load CSV file
+     url_csv = "https://www.cancerimagingarchive.net/wp-content/uploads/LIDC-IDRI_MetaData.csv"
+     save_path_csv = "/content/LIDC-IDRI_MetaData.csv"
+     metadata_csv = download_and_load_file(url_csv, save_path_csv, file_type="csv")
+
+     # Download and load XLS file
+     url_xls = "https://www.cancerimagingarchive.net/wp-content/uploads/tcia-diagnosis-data-2012-04-20.xls"
+     save_path_xls = "/content/tcia-diagnosis-data-2012-04-20.xls"
+     metadata_xls = download_and_load_file(url_xls, save_path_xls, file_type="xls")
+     ```
+
+4. **Analyzed Relationships Between Nodules and Patients**:
+   - Investigated relationships in the LIDC-IDRI nodule count data (e.g., total nodules, size-specific nodules).
+   - Key Findings:
+     - Strong correlations between nodule sizes and counts.
 
 ---
 
@@ -57,67 +72,28 @@ wget https://drive.google.com/uc?id=1ZMblL5-bpCWiSCDiQZ80B8K4S6i-fwzg&export=dow
 
 multi-modal-genetic-mutation-detector/
 ├── data/
-
 │   ├── clinvar.vcf                     
-
-**Raw genetic data file from ClinVar**:
-
+│   ├── LIDC-IDRI_MetaData.csv          
+│   ├── tcia-diagnosis-data-2012-04-20.xls
 │   ├── EGFR_Pathogenic.csv             
-
-**Filtered data for EGFR Pathogenic variants**:
-
 │   ├── KRAS_Benign.csv                 
-
-**Filtered data for KRAS Benign variants**:
-
 │   ├── ALK_VUS.csv                     
-
-**Filtered data for ALK VUS variants**:
-
 │   └── ...                             
-
-**Additional filtered data files**:
-
 ├── results/
 │   ├── gene_variant_summary.csv        
-
-**Summary of variant counts per gene and classification**:
-
 │   ├── visualizations/
-
-│   │   ├── 
-gene_variant_distribution.png 
-
-**Bar plot of variant distribution**:
-
+│   │   ├── gene_variant_distribution.png
 │   │   └── ...                         
-
-**Other generated plots or figures**:
-
 ├── scripts/
-
 │   ├── filter_variants.py              
-
-**Script to parse and filter VCF data**:
-
 │   ├── generate_plots.py               
-
-**Script to generate visualizations**:
-
+│   ├── download_and_load_file.py       
 │   └── ...                             
-
-**Other Python scripts**:
-
 ├── README.md                           
-
-**Project documentation**:
-
 ├── requirements.txt                    
-
-**Python dependencies list**:
-
 ├── .gitignore                          
 
-**Files and folders to exclude from version control**:
+---
 
-
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
